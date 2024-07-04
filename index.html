@@ -4,8 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text tool</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            margin-top: 7%;
+            margin-bottom: auto;
+            
+        }
+        .container{
+            height: 400px;
+            width: 700px;
+            background-color:rgb(169, 169, 241);
+            border-radius: 4px;
+        }
+        .text-Heading{
+            text-align: center;
+        }
+       .input-text{
+        margin: 40px 200px;
+        height: 30px;
+        width: 300px;
+       }
+       .btn-container{
+        display: flex;
+        justify-content: space-around;
+       }
+       .btn{
+        height: 35px;
+        width: 100px;
+       }
+    </style>
 </head>
 <body>
 
+    <div class="container">
+        <h1 class="text-Heading">Text Tool</h1>
+        <input type="text" class="input-text" id="input-text"/>
+        <p id="result-text">
+
+        </p>
+        <div class="btn-container"> 
+            <button class="btn" onclick="makeuppercase()">UpperCase</button>
+            <button class="btn" onclick="makelowercase()">LowerCase</button>
+            <button class="btn" onclick="Charactercount()">Character Count</button>
+            <button class="btn" onclick="">Word Count</button>
+        </div>
+    </div>
+    <script>
+        const inputElement = document.getElementById("input-text")
+        const resulttext = document.getElementById("result-text")
+        function makeuppercase(){
+             resulttext.innerText = inputElement.value.toUpperCase()
+        } 
+        function makelowercase(){
+             resulttext.innerText= inputElement.value.toLowerCase()
+        }
+        function Charactercount(){
+            resulttext.innerText=inputElement.value.length
+        }
+        function wordcount(){
+            resulttext.innerText=inputElement.value
+        }
+    </script>
 </body>
 </html>
