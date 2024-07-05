@@ -55,27 +55,42 @@
 
         </p>
         <div class="btn-container"> 
-            <button class="btn" onclick="makeuppercase()">UpperCase</button>
-            <button class="btn" onclick="makelowercase()">LowerCase</button>
-            <button class="btn" onclick="Charactercount()">Character Count</button>
-            <button class="btn" onclick="">Word Count</button>
+            <button class="btn" onclick="giveaction('uppercase')">UpperCase</button>
+            <button class="btn" onclick="giveaction('lowercase')">LowerCase</button>
+            <button class="btn" onclick="giveaction('charcount')">Character Count</button>
+            <button class="btn" onclick="giveaction('wordcount')">Word Count</button>
         </div>
     </div>
     <script>
         const inputElement = document.getElementById("input-text")
         const resulttext = document.getElementById("result-text")
-        function makeuppercase(){
-             resulttext.innerText = inputElement.value.toUpperCase()
-        } 
-        function makelowercase(){
-             resulttext.innerText= inputElement.value.toLowerCase()
-        }
-        function Charactercount(){
-            resulttext.innerText=inputElement.value.length
-        }
-        function wordcount(){
-            resulttext.innerText=inputElement.value
-        }
+function giveaction(action){
+      if (action == "uppercase"){
+                  resulttext.innerText=inputElement.value.toUpperCase()
+      }
+      else if(action == "lowercase"){
+                 resulttext.innerText=inputElement.value.toLowerCase()
+      }
+      else if(action == "charcount"){
+                 resulttext.innerText=inputElement.value.length
+      }
+      else{
+              resulttext.innerText=inputElement.value.split(" ").length
+      }
+    }
+
+        // function makeuppercase(){
+        //      resulttext.innerText = inputElement.value.toUpperCase()
+        // } 
+        // function makelowercase(){
+        //      resulttext.innerText= inputElement.value.toLowerCase()
+        // }
+        // function Charactercount(){
+        //     resulttext.innerText=inputElement.value.length
+        // }
+        // function wordcount(){
+        //     resulttext.innerText=inputElement.value.split(" ").length
+        // }
     </script>
 </body>
 </html>
